@@ -1,0 +1,34 @@
+{
+  "name": "new-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "migrate": "./node_modules/.bin/sequelize db:migrate",
+    "migrate:drop": "./node_modules/.bin/sequelize db:migrate:undo:all",
+    "seed": "./node_modules/.bin/sequelize db:seed:all",
+    "refresh:db": "npm run migrate:drop && npm run migrate && npm run seed",
+    "lint": "./node_modules/.bin/eslint ./ --fix"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@hapi/joi-date": "^2.0.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "joi": "^17.3.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.6",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "sequelize-cli": "^6.2.0"
+  }
+}
